@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"sitcon/harry_potter"
 	"sitcon/lord_of_the_rings"
+	"sitcon/matrix"
 	"sitcon/star_wars"
 )
 
@@ -23,6 +24,15 @@ func main() {
 
 	// Lord of the Rings themed handlers
 	http.HandleFunc("/ring", lord_of_the_rings.LotrHandler)
+	http.HandleFunc("/lord_of_the_rings/flag.png", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "lord_of_the_rings/flag.png")
+	})
+
+	// Matrix themed handlers
+	http.HandleFunc("/morpheus", matrix.MatrixHandler)
+	http.HandleFunc("/matrix/flag.png", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "matrix/flag.png")
+	})
 
 	fmt.Println("Starting server on http://localhost:8080")
 

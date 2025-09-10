@@ -49,6 +49,16 @@ const htmlPage = `
 			border-left: 4px solid #8d6e63; /* Muted brown border */
 			background-color: #e6d9c1; /* Slightly darker parchment */
 		}
+
+		.hoverable {
+			cursor: help;
+		}
+
+	
+    	.hidden-flag::after {
+      		content: "flag{css_magic_reveal}";
+      		color: white;
+    	}
 	</style>
 </head>
 <body>
@@ -58,7 +68,11 @@ const htmlPage = `
 		
 		<div class="quote">
 			<p>"One Ring to rule them all, One Ring to find them,<br>
-			One Ring to bring them all and in the darkness bind them."</p>
+			One Ring to bring them all and <span class="hoverable" title="there is more than the eyes can see, maybe the dwarves know where to look">in the darkness</span> bind them."</p>
+		</div>
+
+		<div id="flag" style="display:none;">
+  			<img src="http://localhost:8080/lord_of_the_rings/flag.png" alt="here it is">
 		</div>
 
 		<p>
