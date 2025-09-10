@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"sitcon/alien"
 	"sitcon/harry_potter"
 	"sitcon/lord_of_the_rings"
 	"sitcon/matrix"
@@ -33,6 +34,9 @@ func main() {
 	http.HandleFunc("/matrix/flag.png", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "matrix/flag.png")
 	})
+
+	// Alien vs. Predator themed handler
+	http.HandleFunc("/alien", alien.AlienHandler)
 
 	fmt.Println("Starting server on http://localhost:8080")
 
