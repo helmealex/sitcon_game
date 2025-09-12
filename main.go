@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"sitcon/alien"
+	"sitcon/end"
 	"sitcon/harry_potter"
 	"sitcon/lord_of_the_rings"
 	"sitcon/matrix"
@@ -37,6 +38,9 @@ func main() {
 
 	// Alien vs. Predator themed handler
 	http.HandleFunc("/alien", alien.AlienHandler)
+
+	// End of the adventure handler
+	http.HandleFunc("/end", end.EndHandler)
 
 	fmt.Println("Starting server on http://localhost:8080")
 
